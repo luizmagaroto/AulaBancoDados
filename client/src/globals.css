@@ -19,6 +19,7 @@ body {
   h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: red;
   }
   
   .container {
@@ -28,7 +29,7 @@ body {
     justify-content: center;
     padding: 20px;
     min-height: 100vh;
-    background-color: #f7f7f7;
+    background-color: #121212;
   }
   
   .form-container {
@@ -52,7 +53,7 @@ body {
   
   .form-container button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: red;
     color: white;
     border: none;
     border-radius: 4px;
@@ -62,7 +63,7 @@ body {
   }
   
   .form-container button:hover {
-    background-color: #0056b3;
+    background-color: rgb(145, 0, 0);
   }
   
   .table-container {
@@ -91,7 +92,7 @@ body {
   
   .table-container td button {
     padding: 5px 10px;
-    background-color: #dc3545;
+    background-color: red;
     color: white;
     border: none;
     border-radius: 4px;
@@ -99,7 +100,7 @@ body {
   }
   
   .table-container td button:hover {
-    background-color: #c82333;
+    background-color: rgb(145, 0, 0);
   }
   
   .delete-container {
@@ -117,7 +118,7 @@ body {
   
   .delete-container button {
     padding: 10px;
-    background-color: #dc3545;
+    background-color: red;
     color: white;
     border: none;
     border-radius: 4px;
@@ -127,7 +128,7 @@ body {
   }
   
   .delete-container button:hover {
-    background-color: #c82333;
+    background-color: rgb(145, 0, 0);
   }
   
   @media (max-width: 600px) {
@@ -149,7 +150,7 @@ body {
     justify-content: center;
     width: 200px;
     height: 200px;
-    background-color: #409706b7;
+    background-color: red;
     color: white;
     border-radius: 8px;
     text-decoration: none;
@@ -160,5 +161,5 @@ body {
   }
   
   .card:hover {
-    background-color: #0056b3;
+    background-color: rgb(145, 0, 0);
   }

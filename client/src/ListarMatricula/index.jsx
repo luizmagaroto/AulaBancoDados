@@ -44,8 +44,8 @@ export default function ReadMatriculas() {
           <tr>
             <th>Código Matrícula</th>
             <th>Nome do Aluno</th>
-            <th>Turma</th>
-            <th>Curso</th>
+            <th>Plano</th>
+            <th>Rede</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -54,8 +54,8 @@ export default function ReadMatriculas() {
             <tr key={matricula._id}>
               <td>{matricula._id}</td>
               <td>{matricula.aluno}</td>
-              <td>{matricula.turma}</td>
-              <td>{matricula.curso}</td>
+              <td>{matricula.plano}</td>
+              <td>{matricula.rede}</td>
               <td>
                 <button onClick={() => handleDelete(matricula._id)}>Excluir</button>
               </td>

@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function UpdateMatricula() {
+export default function UpdateCompra() {
   const [id, setId] = useState('');
   const [aluno, setAluno] = useState('');
-  const [turma, setTurma] = useState('');
-  const [curso, setCurso] = useState('');
+  const [plano, setPlano] = useState('');
+  const [rede, setRede] = useState('');
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const atualizacao = { aluno, turma, curso };
+    const atualizacao = { aluno, plano, rede };
 
     try {
       const response = await fetch(`http://localhost:5000/matriculas/${id}`, {
@@ -22,23 +22,23 @@ export default function UpdateMatricula() {
         body: JSON.stringify(atualizacao),
       });
       if (response.ok) {
-        alert('Matrícula atualizada com sucesso!');
-        navigate("/matriculas");
+        alert(' Matricula atualizada com sucesso!');
+        navigate("/compra");
       } else {
-        alert('Erro ao atualizar matrícula.');
+        alert('Erro ao atualizar a Matricula.');
       }
     } catch (error) {
-      console.error('Erro ao atualizar matrícula:', error);
+      console.error('Erro ao atualizar a Matricula:', error);
     }
   };
 
   return (
     <div className='container'>
     <form  className="form-container" onSubmit={handleSubmit}>
-      <h2>Atualizar Matrícula</h2>
+      <h2>Atualizar matricula</h2>
       <input
         type="text"
-        placeholder="ID da Matrícula"
+        placeholder="ID da Matricula"
         value={id}
         onChange={(e) => setId(e.target.value)}
         required
@@ -52,16 +52,16 @@ export default function UpdateMatricula() {
       />
       <input
         type="text"
-        placeholder="Turma"
-        value={turma}
-        onChange={(e) => setTurma(e.target.value)}
+        placeholder="Plano"
+        value={plano}
+        onChange={(e) => setPlano(e.target.value)}
         required
       />
       <input
         type="text"
-        placeholder="Curso"
-        value={curso}
-        onChange={(e) => setCurso(e.target.value)}
+        placeholder="Rede"
+        value={rede}
+        onChange={(e) => setRede(e.target.value)}
         required
       />
       <button type="submit">Atualizar Matrícula</button>

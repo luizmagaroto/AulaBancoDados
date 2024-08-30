@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 export default function CreateMatricula() {
   const [aluno, setAluno] = useState('');
-  const [turma, setTurma] = useState('');
-  const [curso, setCurso] = useState('');
+  const [plano, setPlano] = useState('');
+  const [rede, setRede] = useState('');
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const novaMatricula = { aluno, turma, curso };
+    const novaMatricula = { aluno, plano, rede };
 
     try {
       const response = await fetch('http://localhost:5000/matriculas', {
@@ -24,8 +24,8 @@ export default function CreateMatricula() {
       if (response.ok) {
         alert('Matrícula criada com sucesso!');
         setAluno('');
-        setTurma('');
-        setCurso('');
+        setPlano('');
+        setRede('');
         navigate("/matriculas");
       } else {
         alert('Erro ao criar matrícula.');
@@ -48,16 +48,16 @@ export default function CreateMatricula() {
       />
       <input
         type="text"
-        placeholder="Turma"
-        value={turma}
-        onChange={(e) => setTurma(e.target.value)}
+        placeholder="Plano"
+        value={plano}
+        onChange={(e) => setPlano(e.target.value)}
         required
       />
       <input
         type="text"
-        placeholder="Curso"
-        value={curso}
-        onChange={(e) => setCurso(e.target.value)}
+        placeholder="Rede"
+        value={rede}
+        onChange={(e) => setRede(e.target.value)}
         required
       />
       <button type="submit">Criar Matrícula</button>
